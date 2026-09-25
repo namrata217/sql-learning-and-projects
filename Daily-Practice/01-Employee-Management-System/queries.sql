@@ -150,3 +150,41 @@ SELECT name,age,salary FROM employee WHERE salary<100000;
 -- F. Find employees whose age is greater than or equal to 31.
 
 SELECT * FROM employee WHERE age >=31;
+
+-- Q19 Find employees whose salary is greater than 50,000 AND department is IT.
+
+SELECT * FROM employee WHERE salary > 50000 AND department='IT';
+
+--q20 Find employees whose department is CSE OR IT.
+
+SELECT * FROM employee WHERE department='CSE' OR department='IT';
+
+-- Q21 Find employees whose salary is greater than 50,000 AND age is less than 30.
+SELECT * FROM employee WHERE salary>50000 and age<30;
+
+-- Q22 Find employees whose department is CSE OR salary is greater than 100,000.
+SELECT * FROM employee WHERE department='CSE' OR salary>100000;
+
+-- Q23. Find employees whose department is IT AND salary is greater than 55,000.
+SELECT * FROM employee WHERE department='IT' AND salary>55000;
+
+-- Q24. Find employees whose age is less than 30 OR salary is greater than 100,000.
+SELECT * FROM employee WHERE age<30 OR salary>100000;
+
+-- Q25. Find employees whose department is CSE AND age is exactly 29.
+SELECT * FROM employee WHERE department='CSE' AND age=29;
+
+-- Q26. Find employees who work in IT AND have salary greater than 50,000.
+SELECT * FROM employee WHERE department='IT' AND salary>50000;
+
+-- Q27. Find employees who are older than 30 OR have salary less than 50,000.
+SELECT * FROM employee WHERE age>30 OR salary<50000;
+
+-- Q28. Find employees who work in CSE OR IT AND have salary greater than 50,000.
+SELECT * FROM employee WHERE salary>50000 AND (department='CSE' OR department='IT'); 
+
+-- Q29. Find employees whose salary is less than 90,000.
+SELECT * FROM employee WHERE salary<90000;
+
+-- Q30. Find employees whose salary is greater than or equal to 90,000.
+SELECT * FROM employee WHERE salary>=90000;

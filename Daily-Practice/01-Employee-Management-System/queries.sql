@@ -188,3 +188,42 @@ SELECT * FROM employee WHERE salary<90000;
 
 -- Q30. Find employees whose salary is greater than or equal to 90,000.
 SELECT * FROM employee WHERE salary>=90000;
+
+
+-- ============================================
+-- 6. IN OPERATOR
+-- ============================================
+
+/*IN — Theory
+
+Definition:
+IN is used when you want to check whether a column matches one value from a list of multiple values.
+
+Instead of writing:
+
+WHERE department = 'CSE'
+OR department = 'IT'
+
+you can write:
+
+WHERE department IN ('CSE', 'IT');
+
+Both mean the same thing.*/
+
+-- Q31 Find employees whose department is CSE or IT.
+
+--Write the query using IN.
+SELECT * FROM employee WHERE department IN ('CSE','IT');
+
+-- Q32. Find employees whose department is HR, Finance, or Sales.
+SELECT * FROM employee WHERE department IN('HR','Finance','Sales');
+
+-- Q33. Find employees whose age is 26, 29, or 31.
+SELECT * FROM employee WHERE age IN(26,29,31);
+
+-- Q34. Find employees whose salary is 45,000, 50,000, or 90,000.
+SELECT * FROM employee WHERE salary IN(45000,50000,90000);
+
+-- Q35. Display name, department, and salary of employees
+-- whose department is CSE, IT, or Finance.
+SELECT name,department,salary FROM employee WHERE department IN('CSE','IT','Finance');

@@ -30,4 +30,21 @@ CREATE TABLE employee
     joining_date DATE
   );
 
+/*
+SQL	Purpose
+INT	Numeric value
+VARCHAR	Text
+DATE	Date
+PRIMARY KEY	Unique employee identifier
+AUTO_INCREMENT	Automatically generates ID
+NOT NULL	Value is required
+UNIQUE	Prevents duplicate email
+CHECK	Validates age
 
+USE employee_management;
+
+SHOW TABLES;
+DESC employee;
+*/
+SHOW TABLES;
+DESC employee;

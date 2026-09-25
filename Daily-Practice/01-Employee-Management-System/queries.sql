@@ -26,3 +26,18 @@ SELECT name, department, salary FROM employee;
 -- ============================================
 
 SELECT name FROM employee;
+
+
+-- ============================================
+-- 4. WHERE CLAUSE
+-- ============================================
+
+-- Display employees from IT department
+
+SELECT * FROM employee WHERE department='IT';
+
+-- Display employees whose salary is greater than 50000
+SELECT * FROM employee WHERE salary>50000;
+
+-- Display employees whose age is greater than 30
+SELECT * FROM employee WHERE age>30;

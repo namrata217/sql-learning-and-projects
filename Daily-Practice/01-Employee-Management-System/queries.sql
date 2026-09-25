@@ -124,3 +124,29 @@ SELECT * FROM employee WHERE salary=90000;
 -- Q18. Find employees whose age is 31.
 
 SELECT * FROM employee WHERE age=31;
+
+-- Extra Practice — Do these yourself
+
+-- A. Find employees whose salary is greater than or equal to ₹90,000.
+
+SELECT * FROM employee WHERE salary>=90000;
+
+-- B. Find employees whose salary is less than or equal to ₹50,000.
+
+SELECT * FROM employee WHERE salary<=50000;
+
+-- C. Display only name and department for employees whose age is greater than 30.
+
+SELECT name,department FROM employee WHERE age>30;
+
+-- D. Find the employee whose age is exactly 29.
+
+SELECT * FROM employee WHERE age=29;
+
+-- E. Display name, age, and salary for employees whose salary is less than ₹100,000.
+
+SELECT name,age,salary FROM employee WHERE salary<100000;
+
+-- F. Find employees whose age is greater than or equal to 31.
+
+SELECT * FROM employee WHERE age >=31;

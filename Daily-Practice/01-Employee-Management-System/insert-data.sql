@@ -24,3 +24,6 @@ VALUES
 USE employee_management;
 
 SELECT * FROM employee;
+
+INSERT INTO employee(name,email,age,department,salary,joining_date) VALUES('Namrata Gholave','namrata@gmail.com',29,'CSE',90000,'2026-02-25'),('Shailesh Gholave','shailesh@gmail.com',31,'Instrumentation',1300000,'2025-04-15');
+SELECT * FROM employee;

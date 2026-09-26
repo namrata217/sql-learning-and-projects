@@ -227,3 +227,36 @@ SELECT * FROM employee WHERE salary IN(45000,50000,90000);
 -- Q35. Display name, department, and salary of employees
 -- whose department is CSE, IT, or Finance.
 SELECT name,department,salary FROM employee WHERE department IN('CSE','IT','Finance');
+/*BETWEEN — Theory
+
+BETWEEN is used to find values within a range, including both the starting and ending values.
+
+Example:
+
+SELECT *
+FROM employee
+WHERE salary BETWEEN 50000 AND 90000;
+
+This means:
+
+salary >= 50000 AND salary <= 90000
+
+So BETWEEN is especially useful for:
+
+salary ranges
+age ranges
+dates
+other numeric ranges*/
+
+-- Write the five queries in your queries.sql:
+
+-- Salary between 50,000 and 90,000
+SELECT * FROM employee WHERE salary BETWEEN 50000 AND 90000;
+-- Age between 25 and 30
+SELECT * FROM employee WHERE age BETWEEN 25 AND 30;
+-- Name and salary where salary is between 45,000 and 65,000
+SELECT name,salary FROM employee WHERE salary BETWEEN  45000 AND 65000;
+-- Age between 28 and 35
+SELECT * FROM employee WHERE age BETWEEN 28 AND 35;
+-- Name, department, and salary where salary is between 50,000 and 1,00,000
+SELECT name,department,salary FROM employee WHERE salary BETWEEN 50000 AND 100000;

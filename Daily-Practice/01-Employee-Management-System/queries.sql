@@ -291,3 +291,27 @@ SELECT * FROM employee WHERE name LIKE '%a%';
 SELECT * FROM employee WHERE department LIKE 'I%';
 -- Q45. Display name and email of employees whose email ends with gmail.com.
 SELECT name,email FROM employee WHERE email LIKE '%gmail.com';
+
+
+-- ============================================
+-- 9. DISTINCT
+-- ============================================
+/*
+
+DISTINCT is used to return unique values and remove duplicates.
+
+For example:
+
+SELECT DISTINCT department
+FROM employee;
+
+Instead of showing the department for every employee, it shows each department only once.
+
+*/
+
+--Q46. Display all unique departments from the employee table.
+SELECT DISTINCT department FROM employee;
+--Q47. Display all unique ages of employees.
+SELECT DISTINCT age FROM employee;
+--Q48. Display all unique salary values.
+SELECT DISTINCT salary FROM employee;

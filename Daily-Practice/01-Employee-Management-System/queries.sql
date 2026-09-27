@@ -260,3 +260,34 @@ SELECT name,salary FROM employee WHERE salary BETWEEN  45000 AND 65000;
 SELECT * FROM employee WHERE age BETWEEN 28 AND 35;
 -- Name, department, and salary where salary is between 50,000 and 1,00,000
 SELECT name,department,salary FROM employee WHERE salary BETWEEN 50000 AND 100000;
+
+-- ============================================
+-- 8. LIKE OPERATOR
+-- ============================================
+
+/*We'll do one complete set of 5 questions (Q41–Q45), just like we decided.
+
+LIKE is used for pattern matching, for example:
+
+WHERE name LIKE 'A%'
+
+means name starts with A.
+
+WHERE name LIKE '%a'
+
+means name ends with a.
+
+WHERE name LIKE '%it%'
+
+means the name contains "it".*/
+
+-- Q41. Find employees whose name starts with A.
+SELECT * FROM employee WHERE name LIKE 'A%';
+-- Q42. Find employees whose name ends with a.
+SELECT * FROM employee WHERE name LIKE '%a';
+-- Q43. Find employees whose name contains a anywhere.
+SELECT * FROM employee WHERE name LIKE '%a%';
+-- Q44. Find employees whose department starts with I.
+SELECT * FROM employee WHERE department LIKE 'I%';
+-- Q45. Display name and email of employees whose email ends with gmail.com.
+SELECT name,email FROM employee WHERE email LIKE '%gmail.com';

@@ -1,5 +1,42 @@
 
 
+Day 1 — Employee Database
+
+Scenario:
+You have joined a company as a junior developer. The HR team has an employee table and asks you to retrieve basic employee information.
+
+                 EMPLOYEE
+        ┌─────────────────────────┐
+        │ id                      │
+        │ name                    │
+        │ age                     │
+        │ department              │
+        │ salary                  │
+        │ city                    │
+        │ joining_date            │
+        └─────────────────────────┘
+                    │
+                    ▼
+              SQL Queries
+                    │
+        ┌───────────┴───────────┐
+        ▼                       ▼
+   HR Information          Management
+Day 1 concepts
+
+SELECT → retrieve data.
+
+SELECT * FROM employee;
+
+WHERE → filter rows.
+
+SELECT * FROM employee
+WHERE department = 'CSE';
+
+DISTINCT → remove duplicate values.
+
+SELECT DISTINCT department
+FROM employee;
 --Q1. Display all employees.
 
   SELECT * FROM employee;

@@ -150,7 +150,7 @@ I am maintaining my SQL learning progress through daily practice.
 
 | Day    | Topics              | Status |
 | ------ | ------------------- | ------ |
-| Day 01 | SQL Fundamentals    | ⏳      |
+| Day 01 | SQL Fundamentals    | **DONE**      |
 | Day 02 | Filtering & Sorting | ⏳      |
 | Day 03 | Constraints         | ⏳      |
 | Day 04 | Aggregate Functions | ⏳      |

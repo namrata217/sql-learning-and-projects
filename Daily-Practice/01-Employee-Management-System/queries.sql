@@ -613,3 +613,153 @@ SELECT name,salary FROM employee WHERE salary IS NOT NULL;
 SELECT * FROM employee WHERE joining_date IS NULL;
 --Q86. Display the name and joining_date of employees whose joining_date is NOT NULL.
 select name,joining_date FROM employee WHERE joining_date IS NOT NULL;
+
+
+/*Level 5 — Primary Key & Foreign Key
+1. Primary Key
+
+A Primary Key (PK) uniquely identifies each row in a table.
+
+Example:
+
+CREATE TABLE department (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50)
+);
+
+Here, department_id uniquely identifies each department.
+
+Rules:
+
+Must be unique
+Cannot be NULL
+A table has one primary key constraint (which can contain multiple columns)
+2. Foreign Key
+
+A Foreign Key (FK) creates a relationship between two tables.
+
+Suppose we have:
+
+department
+
+department_id	department_name
+1	IT
+2	HR
+3	Finance
+
+And:
+
+employee
+
+id	name	department_id
+101	Amit	1
+102	Priya	2
+103	Rahul	3
+
+Here:
+
+department.department_id
+        ↑
+        |
+employee.department_id
+
+department_id in employee is the Foreign Key.
+
+It references:
+
+department(department_id)
+3. Why do we use Foreign Keys?
+
+They help maintain referential integrity.
+
+For example, if the department table has only:
+
+1 = IT
+2 = HR
+3 = Finance
+
+then we shouldn't normally insert an employee with:
+
+department_id = 99
+
+because department 99 doesn't exist.
+
+4. Creating the relationship
+
+Parent table:
+
+CREATE TABLE department (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50) NOT NULL
+);
+
+Child table:
+
+CREATE TABLE employee (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    department_id INT,
+    FOREIGN KEY (department_id)
+        REFERENCES department(department_id)
+);
+Important terminology
+Term	Meaning
+Primary Key	Uniquely identifies a row
+Foreign Key	References a key in another table
+Parent table	Table containing the referenced PK
+Child table	Table containing the FK
+Relationship	Connection between tables*/
+
+/*
+Q87
+
+Create a department table with:
+
+department_id → INT, Primary Key
+department_name → VARCHAR(50), NOT NULL
+Q88
+
+Insert these 4 departments:
+
+1 → IT
+2 → HR
+3 → Finance
+4 → Sales*/
+CREATE TABLE department(department_id INT PRIMARY KEY,department_name VARCHAR(50) NOT NULL);
+INSERT INTO department(department_id,department_name) VALUES(1,'IT'),(2,'HR'),(3,'Finance'),(4,'Sales');
+/*Q89
+
+Create an employee2 table with:
+
+id → INT, Primary Key, Auto Increment
+name → VARCHAR(50), NOT NULL
+salary → INT
+department_id → INT
+department_id should be a Foreign Key referencing department(department_id)*/
+CREATE TABLE employee2(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(50) NOT NULL, salary INT, department_id INT, FOREIGN KEY (department_id)
+        REFERENCES department(department_id) );
+
+
+/*Q90
+
+Insert these employees:
+
+Amit   55000   1
+Priya  45000   2
+Rahul  65000   3
+Sneha  50000   1*/
+INSERT INTO employee2(name,salary,department_id)VALUES('Amit',55000,1),('Priya',45000,2),('Rahul',65000,3),('Sneha',50000,1);
+
+/*Q91
+
+Write a query to display all records from employee2.*/
+SELECT * FROM employee2;
+/*Q92. Create a course table with:
+
+course_id → INT, Primary Key, Auto Increment
+course_name → VARCHAR(50), NOT NULL
+duration → INT
+fee → INT
+
+Write only the CREATE TABLE query.*/
+CREATE TABLE course(course_id INT PRIMARY KEY AUTO_INCREMENT, course_name VARCHAR(50) NOT NULL, duration INT, fee INT);

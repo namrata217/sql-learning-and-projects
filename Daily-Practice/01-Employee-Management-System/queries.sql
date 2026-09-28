@@ -542,3 +542,18 @@ UPDATE employee SET salary=70000 WHERE name='Rahul Deshmukh';
 UPDATE employee SET age=30 WHERE name='Sneha Kulkarni';
 --Q77. Update Vikas Joshi's department to IT and salary to 55,000.
 UPDATE employee SET department ='IT',salary=55000 WHERE name='Vikas Joshi';
+
+/*DELETE is used to remove rows from a table.
+DELETE FROM table_name
+WHERE condition;*/
+-- ============================================
+-- 16. DELETE
+-- ============================================
+
+
+--Q78. Delete the employee whose name is Vikas Joshi.
+DELETE FROM employee WHERE name='Vikas Joshi';
+--Q79. Delete the employee whose email is priya@gmail.com.
+DELETE FROM employee WHERE email='priya@gmail.com';
+--Q80. Delete employees whose age is 30.
+DELETE FROM employee WHERE age=30;

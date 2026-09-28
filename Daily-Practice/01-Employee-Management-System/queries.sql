@@ -763,3 +763,93 @@ fee → INT
 
 Write only the CREATE TABLE query.*/
 CREATE TABLE course(course_id INT PRIMARY KEY AUTO_INCREMENT, course_name VARCHAR(50) NOT NULL, duration INT, fee INT);
+
+/*Q93 — Create Department Table
+
+Create a table called department2:
+
+department_id → INT, Primary Key
+department_name → VARCHAR(50), NOT NULL*/
+
+CREATE TABLE department2(department_id INT PRIMARY KEY, department_name VARCHAR(50) NOT NULL);
+/*Q94 — Insert Departments
+
+Insert these 4 records into department2:
+
+1 → IT
+2 → HR
+3 → Finance
+4 → Sales
+
+Use one INSERT statement.*/
+INSERT INTO department2(department_id ,department_name) VALUES(1,'IT'),(2,'HR'),(3,'Finance'),(4,'Sales');
+
+/*Q95 — Create Employee Table
+
+Create employee3 with:
+
+id → INT, Primary Key, Auto Increment
+name → VARCHAR(50), NOT NULL
+salary → INT
+department_id → INT
+department_id → Foreign Key referencing department2(department_id)*/
+CREATE TABLE employee3(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(50) NOT NULL, salary INT, department_id INT, FOREIGN KEY (department_id) REFERENCES department2(department_id));
+
+/*Q95-A
+
+Create a table called student_course with:
+
+student_id → INT, Primary Key
+student_name → VARCHAR(50), NOT NULL
+course_id → INT
+course_id should be a Foreign Key referencing course(course_id)
+
+Write only the CREATE TABLE query.*/
+
+CREATE TABLE student_course(student_id INT PRIMARY KEY,student_name VARCHAR(50) NOT NULL,course_id INT, FOREIGN KEY(course_id) REFERENCES course(course_id));
+
+/*Q96 — Insert Employees
+
+Insert these records into employee3:
+
+name	salary	department_id
+Amit	55000	1
+Priya	45000	2
+Rahul	65000	3
+Sneha	50000	1
+Vikas	60000	4
+
+Use one INSERT statement.*/
+INSERT INTO employee3(name,salary,department_id) VALUES('Amit',55000,1),('Priya',45000,2),('Rahul',65000,3),('Sneha',50000,1),('Vikas',60000,4);
+
+/*Q97 — Display all departments
+
+Display all records from department2.*/
+SELECT * FROM department2;
+
+/*Q98 — Display all employees
+
+Display all records from employee3.*/
+SELECT * FROM employee3;
+
+/*Q99 — Display selected columns
+
+Display:
+
+name
+salary
+department_id
+
+from employee3.*/
+SELECT name,salary,department_id FROM employee3;
+
+/*Q100 — Verify the relationship
+
+Write a query that displays:
+
+employee name
+department_id
+
+from employee3, sorted by department_id in ascending order.*/
+
+SELECT name, department_id FROM employee3 ORDER BY department_id ASC;

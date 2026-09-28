@@ -557,3 +557,59 @@ DELETE FROM employee WHERE name='Vikas Joshi';
 DELETE FROM employee WHERE email='priya@gmail.com';
 --Q80. Delete employees whose age is 30.
 DELETE FROM employee WHERE age=30;
+
+
+/*Level 4 — NULL, IS NULL & IS NOT NULL
+1. What is NULL?
+
+NULL means no value / unknown value.
+
+It is different from:
+
+0 → numeric value
+'' → empty string
+'NULL' → text
+NULL → absence of a value
+
+Example:
+
+SELECT * FROM employee
+WHERE salary IS NULL;
+
+This finds employees whose salary has no value.
+
+2. Why can't we use = NULL?
+
+❌ Wrong:
+
+WHERE salary = NULL;
+
+For NULL, SQL provides special operators:
+
+IS NULL
+IS NOT NULL
+3. IS NULL
+
+Used to find rows where a column has no value.
+
+SELECT * FROM employee
+WHERE salary IS NULL;
+4. IS NOT NULL
+
+Used to find rows where a column contains a value.
+
+SELECT * FROM employee
+WHERE salary IS NOT NULL;*/
+
+--Q81. Display employees whose salary is NULL.
+SELECT * FROM employee WHERE salary IS NULL;
+--Q82. Display employees whose department is NULL.
+SELECT * FROM employee WHERE department IS NULL;
+--Q83. Display employees whose email is NOT NULL.
+SELECT * FROM employee WHERE email IS NOT NULL;
+--Q84. Display employee name and salary where salary is NOT NULL.
+SELECT name,salary FROM employee WHERE salary IS NOT NULL;
+--Q85. Display employees whose joining date is NULL.
+SELECT * FROM employee WHERE joining_date IS NULL;
+--Q86. Display the name and joining_date of employees whose joining_date is NOT NULL.
+select name,joining_date FROM employee WHERE joining_date IS NOT NULL;

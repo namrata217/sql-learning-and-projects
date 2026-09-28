@@ -364,3 +364,34 @@ SELECT * FROM employee LIMIT 3;
 SELECT * FROM employee ORDER BY salary DESC LIMIT 3;
 --Q57. Display the 2 youngest employees.
 SELECT * FROM employee ORDER BY age ASC LIMIT 2;
+
+/*
+Aggregate Functions
+
+This is an important SQL interview topic.
+
+
+
+COUNT() → number of rows
+SUM() → total
+AVG() → average
+MAX() → highest value
+MIN() → lowest value
+
+*/
+
+-- ============================================
+-- 12. AGGREGATE FUNCTIONS
+-- ============================================
+
+
+--Q58. Find the total number of employees.
+SELECT COUNT(*) FROM employee;
+--Q59. Find the total salary of all employees.
+SELECT SUM(salary) AS total_salary FROM employee;
+--Q60. Find the average salary of all employees.
+SELECT AVG(salary) AS avg_salary FROM employee;
+--Q61. Find the highest salary.
+SELECT MAX(salary) AS max_salary FROM employee;
+--Q62. Find the lowest salary.
+SELECT MIN(salary) AS min_salary FROM employee;

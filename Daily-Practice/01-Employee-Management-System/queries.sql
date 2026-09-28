@@ -531,3 +531,14 @@ WHERE condition;*/
 -- ============================================
 -- 15. UPDATE
 -- ============================================
+
+--Q73. Update the salary of Amit Sharma to 60,000.
+UPDATE employee SET salary=60000 WHERE name='Amit Sharma';
+--Q74. Update the department of Priya Patil to Finance.
+UPDATE employee SET department='Finance' WHERE name='Priya Patil';
+--Q75. Increase Rahul Deshmukh's salary to 70,000.
+UPDATE employee SET salary=70000 WHERE name='Rahul Deshmukh';
+--Q76. Update Sneha Kulkarni's age to 30.
+UPDATE employee SET age=30 WHERE name='Sneha Kulkarni';
+--Q77. Update Vikas Joshi's department to IT and salary to 55,000.
+UPDATE employee SET department ='IT',salary=55000 WHERE name='Vikas Joshi';

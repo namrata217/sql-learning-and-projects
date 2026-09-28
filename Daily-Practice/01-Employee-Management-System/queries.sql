@@ -457,3 +457,77 @@ SELECT AVG(salary) AS avg_salary, department FROM employee GROUP BY department;
 SELECT MAX(salary) AS max_salary, department FROM employee GROUP BY department;
 --Q67. Find the lowest salary in each department.
 SELECT MIN(salary) AS min_salary, department FROM employee GROUP BY department;
+
+/*
+HAVING is used to filter groups created by GROUP BY.
+
+Why do we need HAVING?
+
+WHERE filters individual rows.
+
+HAVING filters groups.
+
+For example:
+
+SELECT department, AVG(salary) AS avg_salary
+FROM employee
+GROUP BY department
+HAVING AVG(salary) > 50000;
+
+This means:
+
+Group employees by department.
+Calculate average salary for each department.
+Keep only departments where average salary is greater than 50,000.
+WHERE vs HAVING
+WHERE
+ ↓
+Filters rows
+ ↓
+GROUP BY
+ ↓
+Creates groups
+ ↓
+HAVING
+ ↓
+Filters groups
+Important
+
+This is generally not correct:
+
+WHERE AVG(salary) > 50000
+
+because AVG() is an aggregate function and the aggregate result is produced after grouping.
+
+Use:
+
+HAVING AVG(salary) > 50000
+
+*/
+-- ============================================
+-- 14. HAVING
+-- ============================================
+
+-- Q68. Find departments having more than 1 employee.
+SELECT department FROM employee GROUP BY department HAVING COUNT(*)>1;
+-- Q69. Find departments whose average salary is greater than 50,000.
+SELECT department, AVG(salary) AS avg_salary FROM employee GROUP BY department HAVING AVG(salary)>50000;
+--Q70. Find departments whose total salary is greater than 100,000.
+SELECT department ,SUM(salary) AS total_salary FROM employee GROUP BY department HAVING SUM(salary)>100000;
+--Q71. Find departments where the maximum salary is greater than 60,000.
+SELECT department ,MAX(salary) AS max_salary FROM employee GROUP BY department HAVING MAX(salary)>60000;
+--Q72. Find departments where the minimum salary is less than 50,000.
+SELECT department ,MIN(salary) AS min_salary FROM employee GROUP BY department HAVING MIN(salary)<50000;
+
+--LEVEL3 COMPLETED
+
+/*UPDATE is used to modify existing data in a table.
+
+Syntax
+UPDATE table_name
+SET column_name = new_value
+WHERE condition;*/
+
+-- ============================================
+-- 15. UPDATE
+-- ============================================

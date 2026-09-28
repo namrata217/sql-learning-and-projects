@@ -315,3 +315,39 @@ SELECT DISTINCT department FROM employee;
 SELECT DISTINCT age FROM employee;
 --Q48. Display all unique salary values.
 SELECT DISTINCT salary FROM employee;
+
+-- ============================================
+-- 10. ORDER BY
+-- ============================================
+/*
+
+ORDER BY is used to sort query results.
+
+Ascending order:
+
+ORDER BY salary ASC;
+
+Descending order:
+
+ORDER BY salary DESC;
+
+Remember:
+
+ASC → smallest → largest / A → Z
+DESC → largest → smallest / Z → A
+*/
+
+-- Q49. Display all employees ordered by salary from lowest to highest.
+SELECT * FROM employee ORDER BY salary ASC;
+
+--Q50. Display all employees ordered by salary from highest to lowest.
+SELECT * FROM employee ORDER BY salary DESC;
+
+--Q51. Display employees ordered by age from youngest to oldest.
+SELECT * FROM employee ORDER BY age ASC;
+--Q52. Display only name and salary, ordered by salary from highest to lowest.
+SELECT name,salary FROM employee ORDER BY salary DESC;
+--Q53. Display employees ordered by name alphabetically (A → Z).
+SELECT * FROM employee ORDER BY name ASC;
+--Q54. Display name, department, and salary of all employees, ordered by salary from highest to lowest.
+SELECT name,department,salary FROM employee ORDER BY salary DESC;

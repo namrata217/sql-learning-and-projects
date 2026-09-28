@@ -351,3 +351,16 @@ SELECT name,salary FROM employee ORDER BY salary DESC;
 SELECT * FROM employee ORDER BY name ASC;
 --Q54. Display name, department, and salary of all employees, ordered by salary from highest to lowest.
 SELECT name,department,salary FROM employee ORDER BY salary DESC;
+
+-- ============================================
+-- 11. LIMIT
+-- ============================================
+/*LIMIT is returning row as per requirement*/
+/* LIMIT restricts the number of rows returned by the query. */
+--Q55. Display only the first 3 employees.
+SELECT * FROM employee LIMIT 3;
+
+--Q56. Display the top 3 highest-paid employees.
+SELECT * FROM employee ORDER BY salary DESC LIMIT 3;
+--Q57. Display the 2 youngest employees.
+SELECT * FROM employee ORDER BY age ASC LIMIT 2;

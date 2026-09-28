@@ -189,7 +189,7 @@ SELECT * FROM employee WHERE salary<90000;
 -- Q30. Find employees whose salary is greater than or equal to 90,000.
 SELECT * FROM employee WHERE salary>=90000;
 
-
+--level1 completed
 -- ============================================
 -- 6. IN OPERATOR
 -- ============================================
@@ -364,7 +364,7 @@ SELECT * FROM employee LIMIT 3;
 SELECT * FROM employee ORDER BY salary DESC LIMIT 3;
 --Q57. Display the 2 youngest employees.
 SELECT * FROM employee ORDER BY age ASC LIMIT 2;
-
+--Level 2 — Filtering & Sorting completed
 /*
 Aggregate Functions
 
@@ -395,3 +395,65 @@ SELECT AVG(salary) AS avg_salary FROM employee;
 SELECT MAX(salary) AS max_salary FROM employee;
 --Q62. Find the lowest salary.
 SELECT MIN(salary) AS min_salary FROM employee;
+/*
+GROUP BY is used to arrange rows into groups based on the same column value.
+
+For example, employees can be grouped department-wise:
+
+SELECT department
+FROM employee
+GROUP BY department;
+Why do we use it?
+
+We use GROUP BY with aggregate functions such as:
+
+COUNT() — count employees in each group
+
+SUM() — total salary of each group
+
+AVG() — average salary of each group
+
+MAX() — highest salary in each group
+
+MIN() — lowest salary in each group
+
+Example
+SELECT department, COUNT(*) AS employee_count
+FROM employee
+GROUP BY department;
+
+This gives the number of employees in each department.
+
+
+When using GROUP BY, every selected column that is not inside an aggregate function should normally be included in the GROUP BY.
+
+Correct:
+
+SELECT department, AVG(salary)
+FROM employee
+GROUP BY department;
+
+Incorrect:
+
+SELECT department, name, AVG(salary)
+FROM employee
+GROUP BY department;
+
+Here, name is neither grouped nor aggregated.
+
+*/
+
+-- ============================================
+-- 13. GROUP BY
+-- ============================================
+
+--Q63. Find the number of employees in each department.
+SELECT COUNT(*) ,department FROM employee GROUP BY department;
+--Q64. Find the total salary of each department.
+SELECT SUM(salary) AS total_salary ,department FROM employee GROUP BY department;
+--Q65. Find the average salary of each department.
+SELECT AVG(salary) AS avg_salary, department FROM employee GROUP BY department;
+--Q66. Find the highest salary in each department.
+SELECT MAX(salary) AS max_salary, department FROM employee GROUP BY department;
+--Q67. Find the lowest salary in each department.
+SELECT MIN(salary) AS min_salary, department FROM employee GROUP BY department;

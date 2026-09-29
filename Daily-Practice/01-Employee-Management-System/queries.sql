@@ -853,3 +853,164 @@ department_id
 from employee3, sorted by department_id in ascending order.*/
 
 SELECT name, department_id FROM employee3 ORDER BY department_id ASC;
+
+
+/*Level 5 — INNER JOIN
+1. Small Theory
+What is INNER JOIN?
+
+INNER JOIN is used to combine rows from two tables when there is a matching value between them.
+
+In our tables:
+
+department2
+-------------------------
+department_id | department_name
+1             | IT
+2             | HR
+3             | Finance
+4             | Sales
+employee3
+--------------------------------
+id | name  | salary | department_id
+1  | Amit  | 55000  | 1
+2  | Priya | 45000  | 2
+3  | Rahul | 65000  | 3
+4  | Sneha | 50000  | 1
+5  | Vikas | 60000  | 4
+
+The common column is:
+
+employee3.department_id
+             ↕
+department2.department_id
+Visual
+        department2
+┌────┬─────────────┐
+│ ID │ Department  │
+├────┼─────────────┤
+│ 1  │ IT          │
+│ 2  │ HR          │
+│ 3  │ Finance     │
+│ 4  │ Sales       │
+└────┴─────────────┘
+       ▲
+       │ MATCH
+       ▼
+        employee3
+┌────┬───────┬────────┬────┐
+│ ID │ Name  │ Salary │ Dept_ID │
+├────┼───────┼────────┼────┤
+│ 1  │ Amit  │ 55000  │ 1  │
+│ 2  │ Priya │ 45000  │ 2  │
+│ 3  │ Rahul │ 65000  │ 3  │
+│ 4  │ Sneha │ 50000  │ 1  │
+│ 5  │ Vikas │ 60000  │ 4  │
+└────┴───────┴────────┴────┘
+
+INNER JOIN matches the department_id values.
+
+So we can produce:
+
+Amit   | 55000 | IT
+Priya  | 45000 | HR
+Rahul  | 65000 | Finance
+Sneha  | 50000 | IT
+Vikas  | 60000 | Sales
+2. Basic Syntax
+SELECT columns
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+
+For our tables:
+
+SELECT employee3.name, department2.department_name
+FROM employee3
+INNER JOIN department2
+ON employee3.department_id = department2.department_id;
+Important difference
+
+WHERE tells SQL which rows to filter.
+
+ON tells SQL how the two tables are related/matched.
+
+Think:
+
+JOIN → connect tables
+ON   → matching condition
+WHERE → filter the result
+*/
+/*Q101
+
+Display employee name and department name using INNER JOIN.
+
+Expected columns:
+
+name | department_name*/
+SELECT employee3.name,department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id;
+/*Q102
+
+Display:
+
+name
+salary
+department_name
+
+using INNER JOIN.*/
+SELECT employee3.name,employee3.salary,department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id;   
+
+/*Q103
+
+Display employees who belong to the IT department.
+
+Use INNER JOIN and WHERE.*/
+SELECT employee3.name, department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id WHERE department_name='IT';
+
+--Write a query to display employee name and department name for employees belonging to the HR department using INNER JOIN.
+SELECT employee3.name, department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id WHERE department_name='HR';
+    
+/*Q104
+
+Display employees whose salary is greater than 50,000, along with their department name.*/
+SELECT employee3.name, employee3.salary ,department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id WHERE salary>50000;
+/*Q105
+
+Display employees from HR or Finance, along with their salary and department name.
+*/
+SELECT employee3.name, department2.department_name ,employee3.salary FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id WHERE department2.department_name='HR' OR department2.department_name='Finance';
+/*Write a query using INNER JOIN to display:
+
+name
+salary
+department_name
+
+for employees who belong to IT or Sales.
+*/
+SELECT employee3.name, employee3.salary,department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id WHERE department2.department_name='IT' OR department2.department_name='Sales';
+
+/*Q106
+
+Display employee name, salary, and department name, sorted by salary from highest to lowest.
+*/
+SELECT employee3.name,employee3.salary, department2.department_name FROM employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id ORDER BY salary DESC;
+/*Q107
+
+Display the employee with the highest salary, along with their department name.
+
+Hint: Use:
+
+ORDER BY
+LIMIT*/
+SELECT employee3.name,employee3.salary,department2.department_name From employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id ORDER BY salary DESC LIMIT 1; 
+/*Q108
+
+Display:
+
+department_name
+employee_name
+salary
+
+and sort the result by department name in ascending order.*/
+SELECT employee3.name,employee3.salary,department2.department_name From employee3 INNER JOIN department2 ON employee3.department_id=department2.department_id ORDER BY department2.department_name ASC; 
+/*Q108

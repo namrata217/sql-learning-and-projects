@@ -9,7 +9,7 @@ SELECT * FROM employee WHERE salary <80000;
 --Q3. Display employees whose age is greater than or equal to 30.
 SELECT * FROM employee WHERE age>=30;
 --Q4. Display employees whose age is less than or equal to 29.
-SELECT * FROM employee WHERE age<=20;
+SELECT * FROM employee WHERE age<=29;
 --Q5. Display employees whose salary is not equal to 90000.
 SELECT * FROM employee WHERE salary !=90000;
 
@@ -25,7 +25,7 @@ SELECT * FROM employee WHERE salary>50000 AND age<30;
 
 
 --Q10. Display employees who belong to either CSE or IT.
-SELECT * FROM employee WHERE department='CSE' OR department='OR';
+SELECT * FROM employee WHERE department='CSE' OR department='IT';
 --Q11. Display employees who live in either Pune or Mumbai.
 SELECT * FROM employee WHERE city='Pune' OR city='Mumbai';
 --Q12. Display employees whose salary is either 50000 or 90000.
@@ -51,3 +51,8 @@ SELECT * FROM employee WHERE salary>75000;
 SELECT DISTINCT department FROM employee;
 --R5. Display employees who live in Pune.
 SELECT * FROM employee WHERE city='Pune';
+
+--T1. Display employees whose age is less than or equal to 35.
+SELECT * FROM employee WHERE age<=35;
+--T2. Display employees who belong to either CSE or Mechanical.
+SELECT * FROM employee WHERE department='CSE' OR department='Mechanical';

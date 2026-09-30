@@ -44,3 +44,6 @@ SELECT * FROM employee WHERE age NOT BETWEEN 25 AND 30;
 SELECT * FROM employee WHERE department IN('CSE','IT') AND salary>50000;
 --Q15. Display employees who live in either Pune or Mumbai and whose age is between 25 and 35.
 SELECT * FROM employee WHERE city IN('Pune','Mumbai') AND age BETWEEN 25 AND 35;
+
+--Display employees whose department is either HR, Finance, or Sales, using IN.
+SELECT * FROM employee WHERE department IN('HR','Finance','Sales');

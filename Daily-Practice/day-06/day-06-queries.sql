@@ -8,7 +8,7 @@ SELECT * FROM employee WHERE name LIKE 'N%';
 R4 Display employees whose salary is between 50000 and 100000, ordered by salary descending.
 SELECT * FROM employee WHERE salary BETWEEN 50000 AND 100000 ORDER BY salary DESC; 
 R5 Display employees from Pune, ordered by name ascending.
-SELECT DISTINCT city FROM employee ORDER BY name ASC;
+SELECT * FROM employee WHERE city='Pune' ORDER BY name ASC;
 🆕 PART 2 — LIMIT: 15 Questions
 Q1
 

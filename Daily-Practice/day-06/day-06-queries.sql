@@ -9,6 +9,8 @@ R4 Display employees whose salary is between 50000 and 100000, ordered by salary
 SELECT * FROM employee WHERE salary BETWEEN 50000 AND 100000 ORDER BY salary DESC; 
 R5 Display employees from Pune, ordered by name ascending.
 SELECT * FROM employee WHERE city='Pune' ORDER BY name ASC;
+T1 Display all employees from Mumbai, ordered by salary descending.
+  SELECT * FROM employee WHERE city='Mumbai' ORDER BY salary DESC;
 🆕 PART 2 — LIMIT: 15 Questions
 Q1
 

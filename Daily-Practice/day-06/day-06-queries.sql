@@ -246,42 +246,25 @@ Q60
 
 Display the 4th, 5th and 6th highest-paid employees using LIMIT and OFFSET.
 
-Q61
+Q61 Display the second page of employees when each page contains 5 employees, sorted by name A–Z.
 
-Display the second page of employees when each page contains 5 employees, sorted by name A–Z.
+Q62 Display the third page of employees when each page contains 10 employees, sorted by salary descending.
 
-Q62
+Q63 Display the top 3 employees whose names contain a and salary is greater than 50000.
 
-Display the third page of employees when each page contains 10 employees, sorted by salary descending.
+Q64 Display the top 5 employees who are not from CSE or IT.
 
-Q63
+Q65 Display the 3 highest-paid employees aged between 25 and 35.
 
-Display the top 3 employees whose names contain a and salary is greater than 50000.
+Q66 Display the 2 lowest-paid employees whose names start with S.
 
-Q64
-
-Display the top 5 employees who are not from CSE or IT.
-
-Q65
-
-Display the 3 highest-paid employees aged between 25 and 35.
-
-Q66
-
-Display the 2 lowest-paid employees whose names start with S.
-
-Q67
-
-Display employees from Pune or Mumbai, sorted by salary descending, skipping the top 2 and returning the next 4.
-
-Q68
-
-Display employees whose department is CSE, IT, or HR, sorted by name A–Z, skipping the first 3.
-
-Q69
-
-Display the top 3 employees whose salary is NOT between 50000 and 100000.
-
-Q70
-
-Display the second page of the top-paid employees, where each page contains 5 employees.
+Q67 Display employees from Pune or Mumbai, sorted by salary descending, skipping the top 2 and returning the next 4.
+select * from employee where city in ('Pune','Mumbai') order by salary DESC offset 2 limit 4;
+Q68 Display employees whose department is CSE, IT, or HR, sorted by name A–Z, skipping the first 3.
+select * from employee where department in ('CSE','IT','HR') order by name ASC LIMIT 18446744073709551615 offset 3;
+Q69 Display the top 3 employees whose salary is NOT between 50000 and 100000.
+select * from employee where salary not between 50000 and 100000 order by salary desc limit 3;
+Q70 Display the second page of the top-paid employees, where each page contains 5 employees.
+select * from employee order by salary desc limit 5 offset 5;
+Display employees sorted by salary descending, skip the first 3 employees and return the next 5.
+select * from employee order by salary desc limit 5 offset 3;

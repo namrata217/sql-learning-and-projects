@@ -12,66 +12,42 @@ SELECT * FROM employee WHERE city='Pune' ORDER BY name ASC;
 T1 Display all employees from Mumbai, ordered by salary descending.
   SELECT * FROM employee WHERE city='Mumbai' ORDER BY salary DESC;
 🆕 PART 2 — LIMIT: 15 Questions
-Q1
-
-Display only the first 5 employees.
-
-Q2
-
-Display the 5 highest-paid employees.
-
-Q3
-
-Display the 3 lowest-paid employees.
-
-Q4
-
-Display the 3 youngest employees.
-
-Q5
-
-Display the 3 oldest employees.
-
-Q6
-
-Display the first 10 employees, ordered by name A–Z.
-
-Q7
-
-Display the top 5 highest-paid CSE employees.
-
-Q8
-
-Display the top 3 highest-paid IT employees.
-
-Q9
-
-Display the 2 lowest-paid employees from Pune.
-
-Q10
-
-Display the 3 oldest employees whose salary is greater than 50000.
-
+Q1 Display only the first 5 employees.
+SELECT * FROM employee  LIMIT 5;
+Q2 Display the 5 highest-paid employees.
+SELECT * FROM employee ORDER BY salary DESC LIMIT 5;
+Q3 Display the 3 lowest-paid employees.
+SELECT * FROM employee ORDER BY salary ASC LIMIT 3;
+Q4 Display the 3 youngest employees.
+SELECT * FROM employee ORDER BY age ASC LIMIT 3;
+Q5 Display the 3 oldest employees.
+SELECT * FROM employee ORDER BY age DESC LIMIT 3;
+Q6 Display the first 10 employees, ordered by name A–Z.
+SELECT * FROM employee ORDER BY name ASC LIMIT 10;
+Q7 Display the top 5 highest-paid CSE employees.
+SELECT * FROM employee WHERE department='CSE' ORDER BY salary DESC LIMIT 5;
+Q8 Display the top 3 highest-paid IT employees.
+SELECT * FROM employee WHERE department='IT' ORDER BY salary DESC LIMIT 3;
+Q9 Display the 2 lowest-paid employees from Pune.
+SELECT * FROM employee WHERE city='Pune' ORDER BY salary ASC LIMIT 2;
+Q10 Display the 3 oldest employees whose salary is greater than 50000.
+SELECT * FROM employee WHERE salary>50000 ORDER BY age DESC LIMIT 3;
+Display the 5 youngest employees, ordered from youngest to oldest.
+SELECT * FROM employee ORDER BY age ASC LIMIT 5;
 Q11
 
 Display the 5 youngest employees, ordered by age ascending.
-
+SELECT * FROM employee ORDER BY age ASC LIMIT 5;
 Q12
 
 Display the top 3 highest-paid employees from either CSE or IT.
-
-Q13
-
-Display the 2 highest-paid employees whose age is between 25 and 35.
-
-Q14
-
-Display the 3 employees whose names start with N, ordered by salary descending.
-
-Q15
-
-Display the top 5 employees from Pune, ordered by salary descending.
-
+SELECT * FROM employee WHERE department IN ('CSE','IT') ORDER BY salary DESC LIMIT 3;
+Q13 Display the 2 highest-paid employees whose age is between 25 and 35.
+SELECT * FROM employee WHERE age between 25 AND 35 ORDER BY salary DESC LIMIT 2;
+Q14 Display the 3 employees whose names start with N, ordered by salary descending.
+SELECT * FROM employee WHERE name LIKE 'N%' ORDER BY salary DESC LIMIT 3;
+Q15 Display the top 5 employees from Pune, ordered by salary descending.
+SELECT * FROM employee WHERE city='Pune' ORDER BY salary DESC LIMIT 5;
 🆕 PART 3 — LIMIT + OFFSET: 10 Questions
 
 Remember:

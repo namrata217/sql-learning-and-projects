@@ -61,70 +61,48 @@ skip 10 rows → return next 5 rows
 Q16
 
 Display 5 employees after skipping the first 5 employees.
-
+select * from employee limit 5 offset 5;
 Q17
 
 Display 5 employees after skipping the first 10 employees.
-
+select * from employee limit 5 offset 10;
 Q18
 
 Display employees ordered by salary descending, then skip the top 3 employees and display the next 5.
-
+select * from employee order by salary desc limit 5 offset 3;
 Q19
 
 Display employees ordered by salary ascending, then skip the lowest-paid 2 employees and display the next 3.
-
+select * from employee order by salary asc limit 3 offset 2;
 Q20
 
 Display employees ordered by name A–Z, skip the first 5 names and display the next 5.
-
-Q21
-
-Display employees from CSE ordered by salary descending, skip the top 2 and display the next 3.
-
-Q22
-
-Display employees from Pune ordered by salary descending, skip the top 1 and display the next 3.
-
-Q23
-
-Display employees whose age is greater than 25, ordered by age ascending, skip the first 3 and display the next 5.
-
-Q24
-
-Display employees from either CSE or IT, ordered by salary descending, skip the top 2 and display the next 3.
-
-Q25
-
-Display employees whose salary is between 50000 and 100000, ordered by salary descending, skip the first 2 and display the next 5.
-
+select * from employee order by name asc limit 5 offset 5;
+Q21 Display employees from CSE ordered by salary descending, skip the top 2 and display the next 3.
+select * from employee where department='CSE' order by salary DESC limit 3 offset 2;
+Q22 Display employees from Pune ordered by salary descending, skip the top 1 and display the next 3.
+select * from employee where city='Pune' order by salary DESC limit 3 offset 1;
+Q23 Display employees whose age is greater than 25, ordered by age ascending, skip the first 3 and display the next 5.
+select * from employee where age>25 order by age asc limit 5 offset 3;
+Q24 Display employees from either CSE or IT, ordered by salary descending, skip the top 2 and display the next 3.
+select * from employee where department in ('CSE','IT') order by salary DESC limit 3 offset 2;
+Q25 Display employees whose salary is between 50000 and 100000, ordered by salary descending, skip the first 2 and display the next 5.
+select * from employee where salary between 50000 and 100000 order by salary DESC limit 5 offset 2;
 🔁 PART 4 — Combined Practice: 15 Questions
 
 These combine everything we've learned from Day 01–06.
 
-Q26
-
-Display employees from CSE whose salary is greater than 50000, ordered by salary descending, and show only the top 3.
-
-Q27
-
-Display employees from Pune or Mumbai, ordered by name A–Z, and show only the first 5.
-
-Q28
-
-Display employees whose name starts with S, ordered by salary descending, and show the top 2.
-
-Q29
-
-Display employees whose department is NOT CSE or IT, ordered by salary ascending, and show the first 5.
-
-Q30
-
-Display employees whose age is between 25 and 35, ordered by age ascending, and show the first 4.
-
-Q31
-
-Display employees whose salary is greater than 70000, ordered by salary descending, and show the top 3.
+Q26 Display employees from CSE whose salary is greater than 50000, ordered by salary descending, and show only the top 3.
+select * from employee where department='CSE' and salary>50000 order by salary DESC limit 3;
+Q27 Display employees from Pune or Mumbai, ordered by name A–Z, and show only the first 5.
+select * from employee where city in ('Pune','Mumbai')order by name asc limit 5;
+Q28 Display employees whose name starts with S, ordered by salary descending, and show the top 2.
+select * from employee where name like 'S%' order by salary desc limit 2;
+Q29 Display employees whose department is NOT CSE or IT, ordered by salary ascending, and show the first 5.
+select * from employee where department not in ('CSE','IT') order by salary asc limit 5;
+Q30 Display employees whose age is between 25 and 35, ordered by age ascending, and show the first 4.
+select * from employee where age between 25 and 35 order by age asc limit 4;
+Q31 Display employees whose salary is greater than 70000, ordered by salary descending, and show the top 3.
 
 Q32
 
